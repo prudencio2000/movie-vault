@@ -1,0 +1,11 @@
+<!--Permite mostrar el top 20 peliculas mas populares-->
+<h2 class="text-center mb-4">Top 20 Películas Más Vistas </h2>
+<div class="row" *ngIf="datosMovies && chart_cotegory.length>0">
+    <div class="col-md-8">
+        <app-chart-populity-movies [chartLabels]="chart_cotegory"
+            [popularityData]="chart_value"></app-chart-populity-movies>
+    </div>
+    <div class="col-md-4">
+        <app-tablet-populity-movies [movies]="datosMovies"></app-tablet-populity-movies>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+
+<!--Permite listar todas las peliculas-->
+<h2 class="mb-4">Movie List</h2>
+<div class="row" *ngIf="movies">
+  <!-- Movie 1 -->
+  <div class="col-md-3 mb-4" *ngFor="let movie of movies">
+    <div class="card">
+      <img [src]="urlImgen+'/'+movie.poster_path" class="card-img-top" alt="Movie Title 1">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <p class="card-text reduce-text">{{movie.overview}}</p>
+        <a [routerLink]="['../desciption/'+movie.id]" class="btn btn-primary">Detalles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-pagination *ngIf="movies" [currentPage]="currentPage" [totalPages]="totalPages"
+  (pageChange)="onPageChange($event)">
+</app-pagination>

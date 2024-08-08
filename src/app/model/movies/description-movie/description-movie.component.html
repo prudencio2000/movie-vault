@@ -1,0 +1,25 @@
+<!-- Muestra una decripcion detalla de las peliculas, tambien te da la opcion de guardar la pelicula en favoritos-->
+<div class="container mt-4">
+    <a [routerLink]="['../../']" class="btn btn-secondary d-inline-flex align-items-center mb-3">
+        <i class="fas fa-arrow-left"></i>
+        <span class="ms-2">Volver</span>
+      </a>
+ 
+    <div *ngIf="movieData != undefined" class="row">
+      <div class="col-md-4">
+        <img [src]="urlImgen+'/'+movieData.poster_path" alt="{{ movieData.title }}" class="img-fluid rounded">
+      </div>
+      <div class="col-md-8 mb-5">
+        <h1 class="mb-3">{{ movieData.title }}</h1>
+        <p class="lead">{{ movieData.tagline }}</p>
+        <p><strong>Fecha de lanzamiento:</strong> {{ movieData.release_date }}</p>
+        <p><strong>Descripción:</strong> {{ movieData.overview }}</p>
+        <p><strong>Puntuación:</strong> {{ movieData.vote_average }} / 10</p>
+        <p><strong>Duración:</strong> {{ movieData.runtime }} minutos</p>
+        <p><strong>Presupuesto:</strong> {{ movieData.budget | currency }}</p>
+        <p><strong>Ingresos:</strong> {{ movieData.revenue | currency }}</p>
+        <a [href]="movieData.homepage" class="btn btn-primary m-2" target="_blank">Sitio Oficial</a>
+        <button class="btn btn-danger m-2" target="_blank" (click)="saveMovie(movieData)"> <i class="fa-solid fa-heart"></i> Añadir Favoritas</button>
+      </div>
+    </div>
+  </div>

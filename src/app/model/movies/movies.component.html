@@ -1,0 +1,41 @@
+<!-- Encabezado de la página que incluye la barra de navegación -->
+
+<header class="bg-primary text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">MovieVault</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/details']">Detalles de peliculas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/favorites']">Peliculas Favoritas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container mt-4">
+        <!-- Aquí se insertan las vistas de los componentes cargados a través del router -->
+
+    <router-outlet></router-outlet>
+</div>
+<!-- Pie de página -->
+<footer class="bg-dark text-light py-3 mt-auto">
+    <div class="container text-center">
+        <p>&copy; 2024 Mi Pelicula App. Todos los derecho reservados.</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" class="text-light">Politica de privacidad</a></li>
+            <li class="list-inline-item"><a href="#" class="text-light">Terminos y servicio </a></li>
+        </ul>
+    </div>
+</footer>
